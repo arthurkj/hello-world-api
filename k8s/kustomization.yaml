@@ -10,4 +10,4 @@ namespace: hello-world-api
 images:
 - name: hello-world-api-image
   newName: arthurkj/hello-world-api
-  newTag: '16'
+  newTag: "19"
