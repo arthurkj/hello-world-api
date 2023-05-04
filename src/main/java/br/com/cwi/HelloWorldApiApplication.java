@@ -24,7 +24,7 @@ public class HelloWorldApiApplication {
     }
 
     @GetMapping("/es")
-    public String hello() {
+    public String hola() {
         return "Hola Mundo!";
     }
 }
