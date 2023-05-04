@@ -22,4 +22,9 @@ public class HelloWorldApiApplication {
     public String hello() {
         return "Hello World!";
     }
+
+    @GetMapping("/esp")
+    public String hello() {
+        return "Hola Mundo!";
+    }
 }
