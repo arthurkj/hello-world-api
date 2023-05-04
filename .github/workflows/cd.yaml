@@ -9,8 +9,15 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Bump files
+      - name: Setup node
         uses: actions/setup-node@v2
+
+      - name: Configure bot
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "CI bot"
+
+      - name: Bump files
         run: npx @dwmkerr/standard-version --packageFiles pom.xml --bumpFiles pom.xml
 
       - name: Push
@@ -20,7 +27,7 @@ jobs:
 
   build:
     name: Build
-    needs: build
+    needs: bump
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -71,7 +78,7 @@ jobs:
       - name: Commit
         run: |
           git config --local user.email "action@github.com"
-          git config --local user.name "Deploy Action"
+          git config --local user.name "CI bot"
           git commit -am "change image tag"
 
       - name: Push
