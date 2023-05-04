@@ -14,7 +14,12 @@ public class HelloWorldApiApplication {
     }
 
     @GetMapping("/")
-    public String hello() {
+    public String olaCwi() {
         return "Olá, cwisers!";
+    }
+
+    @GetMapping("/en")
+    public String hello() {
+        return "Hello World!";
     }
 }
