@@ -3,8 +3,21 @@ on:
   push:
     branches: [main]
 jobs:
+  tests:
+    name: Unit tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up JDK    
+        uses: actions/setup-java@v1      
+        with:        
+          java-version: 17
+      - name: Run Tests
+        run: mvn -B test
+
   bump:
     name: Bump version
+    needs: tests
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
