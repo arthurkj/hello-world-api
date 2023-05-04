@@ -3,8 +3,24 @@ on:
   push:
     branches: [main]
 jobs:
+  bump:
+    name: Bump version
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Bump files
+        uses: actions/setup-node@v2
+        run: npx @dwmkerr/standard-version --packageFiles pom.xml --bumpFiles pom.xml
+
+      - name: Push
+        uses: ad-m/github-push-action@master
+        with:
+          tags: true
+
   build:
     name: Build
+    needs: build
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
