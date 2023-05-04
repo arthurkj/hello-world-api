@@ -23,7 +23,7 @@ public class HelloWorldApiApplication {
         return "Hello World!";
     }
 
-    @GetMapping("/esp")
+    @GetMapping("/es")
     public String hello() {
         return "Hola Mundo!";
     }
