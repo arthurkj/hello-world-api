@@ -28,7 +28,7 @@ jobs:
       - name: Configure bot
         run: |
           git config --local user.email "action@github.com"
-          git config --local user.name "CI bot"
+          git config --local user.name "CD bot"
 
       - name: Bump files
         run: npx @dwmkerr/standard-version --packageFiles pom.xml --bumpFiles pom.xml
@@ -76,6 +76,14 @@ jobs:
     needs: build
     steps:
       - uses: actions/checkout@v2
+      - name: Configure bot
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "CD bot"
+
+      - name: Pull
+        run: |
+          git pull origin main
 
       - name: Kustomize
         uses: imranismail/setup-kustomize@v1
@@ -90,8 +98,6 @@ jobs:
 
       - name: Commit
         run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "CI bot"
           git commit -am "change image tag"
 
       - name: Push
