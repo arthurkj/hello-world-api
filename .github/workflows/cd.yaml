@@ -101,7 +101,7 @@ jobs:
       - name: Update k8s
         run: |
           cd k8s
-          kustomize edit set image hello-world-api-image=arthurkj/hello-world-api:${{ github.run_number }}
+          kustomize edit set image hello-world-api-image=arthurkj/hello-world-api:${{ env.VERSION }}
           cat kustomization.yaml
 
       - name: Commit
