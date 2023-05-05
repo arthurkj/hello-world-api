@@ -32,4 +32,9 @@ public class HelloWorldApiApplication {
     public String hallo() {
         return "Hallo Welt!";
     }
+
+    @GetMapping("/fr")
+    public String bounjor() {
+        return "Bonjour le Monde!";
+    }
 }
