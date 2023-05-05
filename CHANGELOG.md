@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## 1.3.0 (2023-05-05)
+
+
+### Features
+
+* **build:** adicionando nova etapa no build ([11a9311](https://github.com/arthurkj/hello-world-api/commit/11a931104304dcd1a59c6abdc17a0aaf248a8653))
+
 ### 1.2.2 (2023-05-05)
 
 
