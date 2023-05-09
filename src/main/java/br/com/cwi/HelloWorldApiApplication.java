@@ -15,7 +15,7 @@ public class HelloWorldApiApplication {
 
     @GetMapping("/")
     public String olaCwi() {
-        return "Olá, cwisers!";
+        return "Olá cwisers!";
     }
 
     @GetMapping("/en")
@@ -31,5 +31,10 @@ public class HelloWorldApiApplication {
     @GetMapping("/de")
     public String hallo() {
         return "Hallo Welt!";
+    }
+
+    @GetMapping("/fr")
+    public String bounjor() {
+        return "Bonjour le Monde!";
     }
 }
